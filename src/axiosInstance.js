@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+console.log( process.env.REACT_APP_API_URL )
 const API_URL = process.env.REACT_APP_API_URL || 'https://salesman-backend.vercel.app/';
 
 const axiosInstance = axios.create({
