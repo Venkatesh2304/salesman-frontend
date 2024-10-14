@@ -135,6 +135,7 @@ function App() {
       setFilteredBills([]);
     } catch (error) {
       alert('Failed to submit data');
+      if (error.response.status == 403) { handleLogout(); }
     }
   };
  
@@ -152,8 +153,8 @@ function App() {
   };
 
   const handleLogout = () => {
-    const confirmed = window.confirm("Are you sure to logout ?") ; 
-    if (!confirmed) return ; 
+    //const confirmed = window.confirm("Are you sure to logout ?") ; 
+    //if (!confirmed) return ; 
  
     // Clear localStorage (token and outstanding data)
     localStorage.removeItem('token');
